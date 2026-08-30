@@ -1,0 +1,32 @@
+[build]
+  publish = "."
+
+[dev]
+  framework = "#static"
+
+[[redirects]]
+  from = "/scholarships"
+  to = "/scholarship"
+  status = 301
+
+[[redirects]]
+  from = "/scholarships/"
+  to = "/scholarship"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/docs/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

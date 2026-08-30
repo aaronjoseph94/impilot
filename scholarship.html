@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scholarships — PILOT Trust</title>
+  <meta name="description" content="Apply for a PILOT scholarship. Submit an essay and a recommendation letter. Winners are announced at Awards Day.">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,480;0,9..144,600;1,9..144,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="Preparing India's Leaders of Tomorrow Trust">
+      <span>PILOT</span>
+    </a>
+    <div class="header-actions">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <a class="btn btn-gold" href="donate.html">Donate</a>
+    </div>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="scholarship.html" aria-current="page">Scholarships</a>
+      <a href="financials.html">Financials</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="initiatives.html">Initiatives</a>
+      <a class="btn btn-gold" href="donate.html">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero wrap">
+    <p class="kicker">Scholarships</p>
+    <h1>PILOT can help you realize your dream.</h1>
+    <p class="lede">PILOT offers scholarships for deserving students. If you are seeking a degree, apply now.</p>
+  </section>
+
+  <section class="section section-paper">
+    <div class="wrap">
+      <p class="kicker">Recent updates</p>
+      <h2>Click an image to read</h2>
+      <div class="update-grid">
+        <a class="update-card" href="docs/update-organized.pdf">
+          <img src="images/update-1.jpg" alt="Recent PILOT scholarship update">
+          <div>
+            <h3>Update</h3>
+            <p>Open the latest note from the trust.</p>
+          </div>
+        </a>
+        <a class="update-card" href="docs/letter-to-pilot.pdf">
+          <img src="images/update-2.jpg" alt="Letter to PILOT">
+          <div>
+            <h3>Letter to PILOT</h3>
+            <p>A letter shared with the trust.</p>
+          </div>
+        </a>
+        <a class="update-card" href="docs/newsletter-2021.pdf">
+          <img src="images/update-3.jpg" alt="PILOT newsletter update">
+          <div>
+            <h3>Newsletter</h3>
+            <p>Read the printed PILOT newsletter.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <h2>The essay</h2>
+        <p>The essay is to help us learn about you. It should contain information on:</p>
+        <div class="essay-box">
+          <ol>
+            <li>Your family background, e.g., My father is a carpenter and my mother is a housewife. I am the only girl and 2nd of 6 children. We live in a small home on the outskirts of Robertsonpet. (You can give details on the economic challenges at home. How growing up around 5 boys impacted you.)</li>
+            <li>Speak about your academic achievements. If you excelled in Chemistry or Geography. How the classroom experience shaped your interests and what you did to grow academically. Mention any prizes or recognition for your class work.</li>
+            <li>Give information on your other interests and extra-curricular activity. Are you interested in Music (do you study classical music, sitar, piano, guitar, singing). Do you enjoy sports, participate in any, etc. Have you travelled to different places? Any special achievements?</li>
+            <li>Talk about your academic goals and what your future plans are for your life.</li>
+          </ol>
+        </div>
+        <p><strong>Be honest. Don’t try to impress or exaggerate. We just want to know you as a person.</strong></p>
+        <p>Along with your essay, not to exceed 2 typewritten pages, you must submit a Letter of Recommendation from a Teacher, or someone who knows your academic and personal accomplishments.</p>
+        <p><a href="docs/sample-essay.pdf">Sample essay — click here</a></p>
+      </div>
+      <div>
+        <h2>Send application</h2>
+        <form class="form" name="scholarship" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" enctype="multipart/form-data">
+          <input type="hidden" name="form-name" value="scholarship">
+          <p class="hp" aria-hidden="true">
+            <label>Don’t fill this out <input name="bot-field" tabindex="-1"></label>
+          </p>
+          <label>Name
+            <input type="text" name="name" required placeholder="e.g. John Doe">
+          </label>
+          <label>Phone
+            <input type="tel" name="phone" required placeholder="e.g. 6366864478">
+          </label>
+          <label>Email address
+            <input type="email" name="email" required placeholder="e.g. john@doe.com">
+          </label>
+          <label>School name
+            <input type="text" name="school" required>
+          </label>
+          <label>Standard
+            <input type="number" name="standard" min="1" max="16" placeholder="e.g. 10">
+          </label>
+          <label>Upload file
+            <input type="file" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+          </label>
+          <label>Essay
+            <textarea name="essay" required placeholder="Paste your essay, or a short introduction if you uploaded a file."></textarea>
+          </label>
+          <button class="btn btn-ink" type="submit">Send application</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="wrap">
+      <p class="kicker">How it works</p>
+      <h2>Selection process</h2>
+      <div class="steps">
+        <article class="step">
+          <h3>Submit essay</h3>
+          <p>Submit the essay to the designated faculty member.</p>
+        </article>
+        <article class="step">
+          <h3>Essay reviewed</h3>
+          <p>A faculty team conducts the first review and refers to PILOT Trustees. The PILOT Trustee committee will review and make the final selection.</p>
+        </article>
+        <article class="step">
+          <h3>Winners announced</h3>
+          <p>Winners will be announced at the annual Awards Day in September/October each year.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="">
+        <span>PILOT</span>
+      </a>
+      <p>Preparing India’s Leaders of Tomorrow Trust supports students in Kolar Gold Fields and beyond, without regard to religion or caste.</p>
+    </div>
+    <div>
+      <h3>Visit</h3>
+      <p>M. Ibrahim Akram<br>9 MEG Colony<br>Banaswadi Road<br>Maruthi Sevanagar<br>Bengaluru 560 033<br>Karnataka</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p><a href="tel:6366864478">6366864478</a><br>
+      <a href="mailto:iampilotindia@gmail.com">iampilotindia@gmail.com</a></p>
+      <p><a href="donate.html">Donate</a> · <a href="scholarship.html">Apply</a> · <a href="about.html">Write to us</a></p>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© Preparing India's Leaders of Tomorrow (PILOT) Trust. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
