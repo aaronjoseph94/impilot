@@ -1,21 +1,18 @@
 (() => {
-  const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".nav");
 
+  const setNav = (open) => {
+    if (!nav || !toggle) return;
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.textContent = open ? "Close" : "Menu";
+    document.body.classList.toggle("nav-open", open);
+  };
+
   if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(open));
-      toggle.textContent = open ? "Close" : "Menu";
-    });
-    nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.textContent = "Menu";
-      });
-    });
+    toggle.addEventListener("click", () => setNav(!nav.classList.contains("is-open")));
+    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setNav(false)));
   }
 
   const counters = document.querySelectorAll("[data-count]");
@@ -54,6 +51,12 @@
   const lightbox = document.querySelector(".lightbox");
   const lightboxImg = lightbox?.querySelector("img");
   const lightboxCap = lightbox?.querySelector("p");
+
+  const closeLightbox = () => {
+    lightbox?.classList.remove("is-open");
+    document.body.classList.remove("lb-open");
+  };
+
   document.querySelectorAll("[data-lightbox]").forEach((fig) => {
     fig.setAttribute("tabindex", "0");
     fig.setAttribute("role", "button");
@@ -64,6 +67,7 @@
       lightboxImg.alt = img.alt;
       if (lightboxCap) lightboxCap.textContent = fig.querySelector("figcaption")?.textContent || "";
       lightbox.classList.add("is-open");
+      document.body.classList.add("lb-open");
     };
     fig.addEventListener("click", open);
     fig.addEventListener("keydown", (event) => {
@@ -73,12 +77,16 @@
       }
     });
   });
-  lightbox?.querySelector(".lightbox-close")?.addEventListener("click", () => lightbox.classList.remove("is-open"));
+
+  lightbox?.querySelector(".lightbox-close")?.addEventListener("click", closeLightbox);
   lightbox?.addEventListener("click", (event) => {
-    if (event.target === lightbox) lightbox.classList.remove("is-open");
+    if (event.target === lightbox) closeLightbox();
   });
+
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") lightbox?.classList.remove("is-open");
+    if (event.key !== "Escape") return;
+    closeLightbox();
+    setNav(false);
   });
 
   document.querySelectorAll("[data-amount]").forEach((btn) => {
@@ -94,6 +102,7 @@
     location.protocol === "file:" ||
     location.hostname === "localhost" ||
     location.hostname === "127.0.0.1";
+
   document.querySelectorAll("form[data-netlify]").forEach((form) => {
     form.addEventListener("submit", (event) => {
       if (!form.checkValidity()) return;
