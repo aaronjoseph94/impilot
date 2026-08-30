@@ -8,50 +8,47 @@
   <link rel="icon" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,480;0,9..144,600;1,9..144,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="header-inner">
+  <div class="bar">
     <a class="brand" href="index.html">
-      <img src="images/logo.png" alt="Preparing India's Leaders of Tomorrow Trust">
+      <img src="images/logo.png" alt="PILOT Trust">
       <span>PILOT</span>
     </a>
-    <div class="header-actions">
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <a class="btn btn-gold" href="donate.html">Donate</a>
-    </div>
-    <nav id="site-nav" class="site-nav" aria-label="Main">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav" aria-label="Main">
       <a href="index.html">Home</a>
       <a href="about.html" aria-current="page">About</a>
       <a href="scholarship.html">Scholarships</a>
       <a href="financials.html">Financials</a>
       <a href="gallery.html">Gallery</a>
       <a href="initiatives.html">Initiatives</a>
-      <a class="btn btn-gold" href="donate.html">Donate</a>
     </nav>
+    <a class="btn btn-saffron" href="donate.html">Donate</a>
   </div>
 </header>
 
 <main id="main">
-  <section class="page-hero wrap">
+  <section class="hero wrap">
     <p class="kicker">About</p>
     <h1>We build dreams.</h1>
     <p class="lede">PILOT is the acronym for Preparing India's Leaders of Tomorrow. This denotes the ability to fly high.</p>
   </section>
 
-  <section class="section section-paper">
-    <div class="wrap split">
-      <figure class="split-media">
-        <img src="images/hero-giving.jpg" alt="PILOT supporters with students">
+  <section class="section section-mist">
+    <div class="wrap grid-2">
+      <figure class="split-photo">
+        <img src="images/story-students.jpg" alt="Students at St. Teresa’s College">
       </figure>
       <div>
         <p>Our scholarship recipients excel and achieve, defying expectations and fulfilling dreams. You can join as Volunteers, Supporters and Donors. When their voices are heard and their dreams valued, when we invest in their future, the World Changes. Let’s be Changemakers.</p>
         <p><strong>Maximizing potential is not the monopoly of the rich.</strong></p>
         <p>Join us in defying expectations and transforming lives.</p>
-        <a class="btn btn-gold" href="donate.html">Donate</a>
+        <a class="btn btn-saffron" href="donate.html">Donate</a>
       </div>
     </div>
   </section>
@@ -60,18 +57,18 @@
     <div class="wrap">
       <p class="kicker">The trust</p>
       <h2>Trustees</h2>
-      <div class="trustees">
-        <article class="trustee">
+      <div class="grid-3 trustees">
+        <article class="card">
           <img src="images/trustee-ruqia.png" alt="Ruqia Iqbal">
           <h3>Ruqia Iqbal</h3>
           <p>Honorary Trustee · Realtor</p>
         </article>
-        <article class="trustee">
+        <article class="card">
           <img src="images/trustee-anil.png" alt="Peter Anil Rego">
           <h3>Peter Anil Rego</h3>
           <p>Managing Director, Brilliant Printers</p>
         </article>
-        <article class="trustee">
+        <article class="card">
           <img src="images/trustee-ayeesha.png" alt="Ayeesha Ahmed">
           <h3>Ayeesha Ahmed</h3>
           <p>Secretary · Education Consultant</p>
@@ -80,8 +77,8 @@
     </div>
   </section>
 
-  <section class="section section-paper" id="contact">
-    <div class="wrap contact-grid">
+  <section class="section section-mist" id="contact">
+    <div class="wrap grid-2">
       <div>
         <p class="kicker">India</p>
         <h2>Contact info</h2>
@@ -92,25 +89,15 @@
       </div>
       <div>
         <h2>More info?</h2>
-        <p>Send a message and a trustee or volunteer will get back to you.</p>
+        <p>Send a message and someone from the trust will get back to you.</p>
         <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
           <input type="hidden" name="form-name" value="contact">
-          <p class="hp" aria-hidden="true">
-            <label>Don’t fill this out <input name="bot-field" tabindex="-1"></label>
-          </p>
-          <label>First name *
-            <input type="text" name="first-name" required placeholder="e.g. Asha">
-          </label>
-          <label>Email address *
-            <input type="email" name="email" required placeholder="e.g. asha@example.com">
-          </label>
-          <label>Phone number
-            <input type="tel" name="phone" placeholder="e.g. 6366864478">
-          </label>
-          <label>Message
-            <textarea name="message" maxlength="180" placeholder="How can we help?"></textarea>
-          </label>
-          <button class="btn btn-ink" type="submit">Send message</button>
+          <p class="hp" aria-hidden="true"><label>Don’t fill this out <input name="bot-field" tabindex="-1"></label></p>
+          <label>First name * <input type="text" name="first-name" required></label>
+          <label>Email address * <input type="email" name="email" required></label>
+          <label>Phone number <input type="tel" name="phone"></label>
+          <label>Message <textarea name="message" maxlength="180"></textarea></label>
+          <button class="btn btn-navy" type="submit">Send message</button>
         </form>
       </div>
     </div>
@@ -120,10 +107,7 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="">
-        <span>PILOT</span>
-      </a>
+      <a class="brand" href="index.html"><img src="images/logo.png" alt=""><span>PILOT</span></a>
       <p>Preparing India’s Leaders of Tomorrow Trust supports students in Kolar Gold Fields and beyond, without regard to religion or caste.</p>
     </div>
     <div>
@@ -132,14 +116,10 @@
     </div>
     <div>
       <h3>Contact</h3>
-      <p><a href="tel:6366864478">6366864478</a><br>
-      <a href="mailto:iampilotindia@gmail.com">iampilotindia@gmail.com</a></p>
-      <p><a href="donate.html">Donate</a> · <a href="scholarship.html">Apply</a> · <a href="about.html">Write to us</a></p>
+      <p><a href="tel:6366864478">6366864478</a><br><a href="mailto:iampilotindia@gmail.com">iampilotindia@gmail.com</a></p>
     </div>
   </div>
-  <div class="wrap legal">
-    <p>© Preparing India's Leaders of Tomorrow (PILOT) Trust. All Rights Reserved.</p>
-  </div>
+  <div class="wrap legal">© Preparing India's Leaders of Tomorrow (PILOT) Trust. All Rights Reserved.</div>
 </footer>
 <script src="js/main.js"></script>
 </body>

@@ -4,80 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scholarships — PILOT Trust</title>
-  <meta name="description" content="Apply for a PILOT scholarship. Submit an essay and a recommendation letter. Winners are announced at Awards Day.">
+  <meta name="description" content="Apply for a PILOT scholarship. Submit an essay and a recommendation letter.">
   <link rel="icon" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,480;0,9..144,600;1,9..144,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="header-inner">
+  <div class="bar">
     <a class="brand" href="index.html">
-      <img src="images/logo.png" alt="Preparing India's Leaders of Tomorrow Trust">
+      <img src="images/logo.png" alt="PILOT Trust">
       <span>PILOT</span>
     </a>
-    <div class="header-actions">
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <a class="btn btn-gold" href="donate.html">Donate</a>
-    </div>
-    <nav id="site-nav" class="site-nav" aria-label="Main">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav" aria-label="Main">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="scholarship.html" aria-current="page">Scholarships</a>
       <a href="financials.html">Financials</a>
       <a href="gallery.html">Gallery</a>
       <a href="initiatives.html">Initiatives</a>
-      <a class="btn btn-gold" href="donate.html">Donate</a>
     </nav>
+    <a class="btn btn-saffron" href="donate.html">Donate</a>
   </div>
 </header>
 
 <main id="main">
-  <section class="page-hero wrap">
+  <section class="hero wrap">
     <p class="kicker">Scholarships</p>
     <h1>PILOT can help you realize your dream.</h1>
     <p class="lede">PILOT offers scholarships for deserving students. If you are seeking a degree, apply now.</p>
   </section>
 
-  <section class="section section-paper">
+  <section class="section section-mist">
     <div class="wrap">
       <p class="kicker">Recent updates</p>
       <h2>Click an image to read</h2>
-      <div class="update-grid">
+      <div class="grid-3">
         <a class="update-card" href="docs/update-organized.pdf">
-          <img src="images/update-1.jpg" alt="Recent PILOT scholarship update">
-          <div>
-            <h3>Update</h3>
-            <p>Open the latest note from the trust.</p>
-          </div>
+          <img src="images/update-1.jpg" alt="Recent PILOT update">
+          <div><h3>Update</h3><p>Latest note from the trust.</p></div>
         </a>
         <a class="update-card" href="docs/letter-to-pilot.pdf">
           <img src="images/update-2.jpg" alt="Letter to PILOT">
-          <div>
-            <h3>Letter to PILOT</h3>
-            <p>A letter shared with the trust.</p>
-          </div>
+          <div><h3>Letter to PILOT</h3><p>A letter shared with the trust.</p></div>
         </a>
         <a class="update-card" href="docs/newsletter-2021.pdf">
-          <img src="images/update-3.jpg" alt="PILOT newsletter update">
-          <div>
-            <h3>Newsletter</h3>
-            <p>Read the printed PILOT newsletter.</p>
-          </div>
+          <img src="images/update-3.jpg" alt="PILOT newsletter">
+          <div><h3>Newsletter</h3><p>Read the printed newsletter.</p></div>
         </a>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap split">
+    <div class="wrap grid-2">
       <div>
         <h2>The essay</h2>
         <p>The essay is to help us learn about you. It should contain information on:</p>
-        <div class="essay-box">
+        <div class="essay">
           <ol>
             <li>Your family background, e.g., My father is a carpenter and my mother is a housewife. I am the only girl and 2nd of 6 children. We live in a small home on the outskirts of Robertsonpet. (You can give details on the economic challenges at home. How growing up around 5 boys impacted you.)</li>
             <li>Speak about your academic achievements. If you excelled in Chemistry or Geography. How the classroom experience shaped your interests and what you did to grow academically. Mention any prizes or recognition for your class work.</li>
@@ -93,50 +81,34 @@
         <h2>Send application</h2>
         <form class="form" name="scholarship" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" enctype="multipart/form-data">
           <input type="hidden" name="form-name" value="scholarship">
-          <p class="hp" aria-hidden="true">
-            <label>Don’t fill this out <input name="bot-field" tabindex="-1"></label>
-          </p>
-          <label>Name
-            <input type="text" name="name" required placeholder="e.g. John Doe">
-          </label>
-          <label>Phone
-            <input type="tel" name="phone" required placeholder="e.g. 6366864478">
-          </label>
-          <label>Email address
-            <input type="email" name="email" required placeholder="e.g. john@doe.com">
-          </label>
-          <label>School name
-            <input type="text" name="school" required>
-          </label>
-          <label>Standard
-            <input type="number" name="standard" min="1" max="16" placeholder="e.g. 10">
-          </label>
-          <label>Upload file
-            <input type="file" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
-          </label>
-          <label>Essay
-            <textarea name="essay" required placeholder="Paste your essay, or a short introduction if you uploaded a file."></textarea>
-          </label>
-          <button class="btn btn-ink" type="submit">Send application</button>
+          <p class="hp" aria-hidden="true"><label>Don’t fill this out <input name="bot-field" tabindex="-1"></label></p>
+          <label>Name <input type="text" name="name" required></label>
+          <label>Phone <input type="tel" name="phone" required></label>
+          <label>Email address <input type="email" name="email" required></label>
+          <label>School name <input type="text" name="school" required></label>
+          <label>Standard <input type="number" name="standard" min="1" max="16"></label>
+          <label>Upload file <input type="file" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"></label>
+          <label>Essay <textarea name="essay" required></textarea></label>
+          <button class="btn btn-navy" type="submit">Send application</button>
         </form>
       </div>
     </div>
   </section>
 
-  <section class="section section-paper">
+  <section class="section section-mist">
     <div class="wrap">
       <p class="kicker">How it works</p>
       <h2>Selection process</h2>
-      <div class="steps">
-        <article class="step">
+      <div class="grid-3 steps">
+        <article class="card">
           <h3>Submit essay</h3>
           <p>Submit the essay to the designated faculty member.</p>
         </article>
-        <article class="step">
+        <article class="card">
           <h3>Essay reviewed</h3>
-          <p>A faculty team conducts the first review and refers to PILOT Trustees. The PILOT Trustee committee will review and make the final selection.</p>
+          <p>A faculty team conducts the first review and refers to PILOT Trustees. The trustee committee makes the final selection.</p>
         </article>
-        <article class="step">
+        <article class="card">
           <h3>Winners announced</h3>
           <p>Winners will be announced at the annual Awards Day in September/October each year.</p>
         </article>
@@ -148,26 +120,19 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="">
-        <span>PILOT</span>
-      </a>
-      <p>Preparing India’s Leaders of Tomorrow Trust supports students in Kolar Gold Fields and beyond, without regard to religion or caste.</p>
+      <a class="brand" href="index.html"><img src="images/logo.png" alt=""><span>PILOT</span></a>
+      <p>Preparing India’s Leaders of Tomorrow Trust supports students in Kolar Gold Fields and beyond.</p>
     </div>
     <div>
       <h3>Visit</h3>
-      <p>M. Ibrahim Akram<br>9 MEG Colony<br>Banaswadi Road<br>Maruthi Sevanagar<br>Bengaluru 560 033<br>Karnataka</p>
+      <p>M. Ibrahim Akram<br>9 MEG Colony<br>Bengaluru 560 033</p>
     </div>
     <div>
       <h3>Contact</h3>
-      <p><a href="tel:6366864478">6366864478</a><br>
-      <a href="mailto:iampilotindia@gmail.com">iampilotindia@gmail.com</a></p>
-      <p><a href="donate.html">Donate</a> · <a href="scholarship.html">Apply</a> · <a href="about.html">Write to us</a></p>
+      <p><a href="mailto:iampilotindia@gmail.com">iampilotindia@gmail.com</a></p>
     </div>
   </div>
-  <div class="wrap legal">
-    <p>© Preparing India's Leaders of Tomorrow (PILOT) Trust. All Rights Reserved.</p>
-  </div>
+  <div class="wrap legal">© Preparing India's Leaders of Tomorrow (PILOT) Trust. All Rights Reserved.</div>
 </footer>
 <script src="js/main.js"></script>
 </body>
