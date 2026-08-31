@@ -13,11 +13,6 @@
   if (toggle && nav) {
     toggle.addEventListener("click", () => setNav(!nav.classList.contains("is-open")));
     nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setNav(false)));
-    document.addEventListener("click", (event) => {
-      if (!nav.classList.contains("is-open")) return;
-      if (nav.contains(event.target) || toggle.contains(event.target)) return;
-      setNav(false);
-    });
   }
 
   const counters = document.querySelectorAll("[data-count]");
@@ -41,21 +36,15 @@
   }
 
   document.querySelectorAll(".bar[data-width]").forEach((bar) => {
-    const fill = () => {
-      const el = bar.querySelector("i");
-      if (el) el.style.width = `${bar.dataset.width}%`;
-    };
-    if (!("IntersectionObserver" in window)) {
-      fill();
-      return;
-    }
+    if (!("IntersectionObserver" in window)) return;
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        fill();
+        const fill = bar.querySelector("i");
+        if (fill) fill.style.width = `${bar.dataset.width}%`;
         io.unobserve(bar);
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.4 });
     io.observe(bar);
   });
 
