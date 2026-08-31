@@ -4,7 +4,6 @@
   --saffron: #d96b2b;
   --saffron-hover: #c05c22;
   --paper: #fffdf9;
-  --mist: #eef3f6;
   --ink: #1c252b;
   --muted: #5b6870;
   --line: #d5dde2;
@@ -186,7 +185,7 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   gap: 0.15rem;
   padding: 0.3rem;
-  background: var(--mist);
+  background: rgba(18, 48, 71, 0.07);
   border-radius: 999px;
 }
 
@@ -263,7 +262,7 @@ p:last-child { margin-bottom: 0; }
 }
 .btn-ghost:hover { background: var(--navy); color: #fff; }
 .btn-light { background: #fff; color: var(--navy); }
-.btn-light:hover { background: var(--mist); color: var(--navy); }
+.btn-light:hover { background: rgba(255, 253, 249, 0.92); color: var(--navy); }
 
 .hero { padding: clamp(2.6rem, 5.5vw, 4.5rem) 0 0.4rem; }
 
@@ -296,7 +295,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .section { padding: clamp(3.2rem, 6vw, 5.2rem) 0; }
-.section-mist { background: var(--mist); }
+.section-mist { background: var(--paper); }
 .section-navy { background: var(--navy); color: #fff; }
 .section-navy .lede,
 .section-navy p { color: #c9d6de; }
@@ -360,7 +359,7 @@ p:last-child { margin-bottom: 0; }
   object-fit: cover;
   object-position: top;
   border-radius: 50%;
-  background: var(--mist);
+  background: var(--paper);
 }
 
 .trustees p { color: var(--muted); }
@@ -445,9 +444,16 @@ p:last-child { margin-bottom: 0; }
   margin: 0 0 1rem;
   display: block;
   background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  border: 0;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 10px 28px rgba(18, 48, 71, 0.12);
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+
+.masonry figure:hover {
+  box-shadow: 0 16px 36px rgba(18, 48, 71, 0.18);
+  transform: translateY(-2px);
 }
 
 .masonry img {
@@ -517,7 +523,7 @@ p:last-child { margin-bottom: 0; }
 .amount.is-active span { color: #c9d6de; }
 
 .donate-note {
-  background: var(--mist);
+  background: rgba(18, 48, 71, 0.06);
   padding: 0.85rem 1rem;
   border-radius: 6px;
   margin: 0 0 0.4rem;
@@ -580,7 +586,7 @@ p:last-child { margin-bottom: 0; }
 .bar.accent i { background: var(--saffron); }
 
 .essay {
-  background: var(--mist);
+  background: rgba(18, 48, 71, 0.05);
   padding: 1.15rem 1.25rem;
   border-left: 3px solid var(--saffron);
   margin: 0.8rem 0 1.1rem;
@@ -589,13 +595,26 @@ p:last-child { margin-bottom: 0; }
 .essay ol { padding-left: 1.15rem; margin: 0; }
 .essay li + li { margin-top: 0.7rem; }
 
+.video-feature {
+  max-width: 860px;
+}
+
+.video-feature .lede { color: #c9d6de; }
+
+.video-stage {
+  margin-top: 1.6rem;
+  padding: 0.7rem;
+  background: #0a1924;
+  border-radius: 16px;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+}
+
 .video {
   position: relative;
   padding-top: 56.25%;
   background: #000;
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: hidden;
-  margin-top: 1.2rem;
 }
 
 .video iframe {
