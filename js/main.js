@@ -1,4 +1,5 @@
 (() => {
+  // Mobile drawer
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".nav");
 
@@ -20,6 +21,7 @@
     });
   }
 
+  // Count-up on the home stat
   const counters = document.querySelectorAll("[data-count]");
   if (counters.length && "IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
@@ -40,6 +42,7 @@
     counters.forEach((el) => io.observe(el));
   }
 
+  // Financials bars fill when they scroll into view
   document.querySelectorAll(".bar[data-width]").forEach((bar) => {
     const fill = () => {
       const el = bar.querySelector("i");
@@ -59,6 +62,7 @@
     io.observe(bar);
   });
 
+  // Gallery poster: swap the thumbnail for the YouTube embed on click
   document.querySelectorAll("[data-video]").forEach((thumb) => {
     thumb.addEventListener("click", () => {
       const id = thumb.dataset.video;
@@ -72,6 +76,7 @@
     });
   });
 
+  // Photo lightbox
   const lightbox = document.querySelector(".lightbox");
   const lightboxImg = lightbox?.querySelector("img");
   const lightboxCap = lightbox?.querySelector("p");
@@ -89,7 +94,13 @@
       if (!img || !lightbox || !lightboxImg) return;
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
-      if (lightboxCap) lightboxCap.textContent = fig.querySelector("figcaption")?.textContent || "";
+      if (lightboxCap) {
+        const title = fig.querySelector("figcaption strong")?.textContent?.trim();
+        const body = fig.querySelector("figcaption span")?.textContent?.trim();
+        lightboxCap.textContent = title && body
+          ? `${title} — ${body}`
+          : (fig.querySelector("figcaption")?.textContent || "").replace(/\s+/g, " ").trim();
+      }
       lightbox.classList.add("is-open");
       document.body.classList.add("lb-open");
     };
@@ -113,6 +124,7 @@
     setNav(false);
   });
 
+  // Donate suggested amounts
   document.querySelectorAll("[data-amount]").forEach((btn) => {
     btn.addEventListener("click", () => {
       document.querySelectorAll("[data-amount]").forEach((other) => other.classList.remove("is-active"));
@@ -122,6 +134,7 @@
     });
   });
 
+  // Netlify Forms need a live site; locally just land on the thank-you page
   const local =
     location.protocol === "file:" ||
     location.hostname === "localhost" ||
